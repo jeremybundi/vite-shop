@@ -6,6 +6,7 @@ import SignUp from '../views/SignUp.vue';
 import Add from '../views/Add.vue';
 import Topheader from '../views/Topheader.vue'
 import ItemsDisplay from '../views/ItemsDisplay.vue';
+import Checkout from '../views/Checkout.vue'
 
 
 
@@ -16,6 +17,7 @@ const routes = [
    {path: '/items', name: 'ItemsDisplay', component: ItemsDisplay},
   { path: '/add', name: 'Add', component: Add },
   { path: '/top', name: 'Topheader', component: Topheader },
+  {path: '/checkout', name: 'Checkout', component: Checkout}
 
  
 ];
