@@ -26,7 +26,7 @@
         </div>
       </div>
 
-      <!-- Right column: Cart summary -->
+     
       <div class="bg-white p-4 rounded-lg shadow-md">
         <h3 class="text-xl font-semibold mb-4">Cart Summary</h3>
         <div class="text-blue-500 font-semibold">Total Price: Ksh. {{ totalPrice }}</div>
@@ -86,7 +86,7 @@
             Place Order
           </button>
         </form>
-        <a href="/" class="text-blue-500 mt-4 block">Continue shopping</a>
+        <a href="/items" class="text-blue-500 mt-4 block">Continue shopping</a>
       </div>
     </div>
   </div>

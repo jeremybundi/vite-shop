@@ -29,7 +29,7 @@
   
     
 </div>
-<DropdownMenu :categories="categories" style="margin-top:0;" />
+<DropdownMenu />
      
 </div>
   </template>
@@ -50,43 +50,6 @@ export default {
     return {
       searchQuery: '', 
       items: [],
-      categories: [
-        {
-          id: 1,
-          name: "Men's Wear",
-          subcategories: [
-            { id: 1, name: 'Men T-shirts' },
-            { id: 2, name: 'Men Trouser' },
-            { id: 3, name: 'Men Suits' },
-            { id: 4, name: 'Men Shirts' },
-            { id: 5, name: 'Men Shoes' },
-            
-            
-          ],
-        },
-        {
-          id: 2,
-          name: 'Ladies Wear',
-          subcategories: [
-            { id: 6, name: 'Ladies Dresses' },
-            { id: 7, name: 'Ladies Heels' },
-            { id: 8, name: 'Ladies Sweater' },
-            { id: 9, name: 'Ladies Tops' },
-            { id: 10, name: 'Ladies Crop Shirts' },
-          ],
-        },
-        {
-        id: 3,
-          name: "Kids' Wear",
-          subcategories: [
-            { id: 11, name: 'Kids Tops' },
-            { id: 12, name: 'Kids Bottoms' },
-            { id: 13, name: 'Kids Dresses' },
-            { id: 14, name: 'Kids Outwears' },
-
-          ],
-        },
-      ],
     };
   },
   computed: {

@@ -9,6 +9,7 @@ import ItemsDisplay from '../views/ItemsDisplay.vue';
 import Checkout from '../views/Checkout.vue';
 import  SearchedItems from '../views/SearchedItems.vue';
 import OrderedItems from '../views/OrderedItems.vue';
+import SubCategories from '../views/SubCategories.vue'
 
 
 
@@ -22,6 +23,7 @@ const routes = [
   {path: '/checkout', name: 'Checkout', component: Checkout},
   {path: '/search', name: 'Search', component: SearchedItems},
   {path: '/ordered', name: 'OrderedItems', component: OrderedItems},
+  {path: '/sub :subcategoryId', name: 'subcategories', component: SubCategories},
 
  
 ];
