@@ -1,8 +1,8 @@
 <template>
-  <div class="bodyContainer">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+  <div class="bodyContainer mt-5">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 ml-4 ">
       <!-- Left column: Display items -->
-      <div v-if="addedItems.length" class="space-y-4">
+      <div v-if="addedItems.length" class="space-y-1 mt-5 w-500">
         <div v-for="(item, index) in addedItems" :key="item.id" class="bg-white p-4 rounded-lg shadow-md">
           <div class="flex items-center space-x-4">
             <img :src="item.item_url" alt="Item Image" class="w-16 h-16 rounded-full" />
@@ -26,40 +26,40 @@
         </div>
       </div>
 
-     
-      <div class="bg-white p-4 rounded-lg shadow-md">
-        <h3 class="text-xl font-semibold mb-4">Cart Summary</h3>
+          
+      <div class="bg-green-50 h-1/2 w-50 mt-5 mr-5 p-4 rounded-lg shadow-md flex flex-col">
+        <h3>Cart Summary</h3>
         <div class="text-blue-500 font-semibold">Total Price: Ksh. {{ totalPrice }}</div>
         <form @submit.prevent="placeOrder" class="space-y-4">
-          <div class="flex flex-col">
-            <label for="customerName" class="text-gray-600">Customer Name</label>
+          <div class="flex">
+            <label for="customerName" class="text-gray-600 w-1/4">Customer Name</label>
             <input
               type="text"
               id="customerName"
               v-model="customerName"
               placeholder="Enter your name"
-              class="border rounded-md p-2 focus:outline-none focus:border-blue-500"
+              class="border rounded-md p-2 w-60 focus:outline-none focus:border-blue-500"
               required
             />
           </div>
-          <div class="flex flex-col">
-            <label for="phoneNumber" class="text-gray-600">Phone Number</label>
+          <div class="flex">
+            <label for="phoneNumber" class="text-gray-600 w-1/4">Phone Number</label>
             <input
               type="tel"
               id="phoneNumber"
               v-model="phoneNumber"
               placeholder="Enter phone number"
-              class="border rounded-md p-2 focus:outline-none focus:border-blue-500"
+              class="border rounded-md p-2 w-60 focus:outline-none focus:border-blue-500"
               pattern="\d*"
               required
             />
           </div>
-          <div class="flex flex-col">
-            <label for="deliveryAddress" class="text-gray-600">Delivery Address</label>
+          <div class="flex">
+            <label for="deliveryAddress" class="text-gray-600 w-1/4">Delivery Address</label>
             <select
               id="deliveryAddress"
               v-model="deliveryAddress"
-              class="border rounded-md p-2 focus:outline-none focus:border-blue-500"
+              class="border rounded-md p-2 w-60 focus:outline-none focus:border-blue-500"
               required
             >
               <option value="">Select address</option>
@@ -68,12 +68,12 @@
               <option value="emirates_complex">Emirates Complex</option>
             </select>
           </div>
-          <div class="flex flex-col">
-            <label for="paymentMethod" class="text-gray-600">Payment Method</label>
+          <div class="flex">
+            <label for="paymentMethod" class="text-gray-600 w-1/4">Payment Method</label>
             <select
               id="paymentMethod"
               v-model="paymentMethod"
-              class="border rounded-md p-2 focus:outline-none focus:border-blue-500"
+              class="border rounded-md p-2 w-60 focus:outline-none focus:border-blue-500"
               required
             >
               <option value="">Select method</option>
@@ -86,23 +86,17 @@
             Place Order
           </button>
         </form>
-        <a href="/items" class="text-blue-500 mt-4 block">Continue shopping</a>
+        <a href="/items" class="text-blue-500 mt-4 block">Continue shopping >></a>
       </div>
+
     </div>
-  </div>
+    </div>
+  
 </template>
 
 <script>
 import { useAddedItemStore } from '../stores/addedItemsStore'; 
-
-
-
-
 import axios from 'axios'
-
-
-
-
 
 export default {
   data() {
