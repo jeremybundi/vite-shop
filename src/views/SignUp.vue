@@ -1,5 +1,6 @@
 <template>
-  <div class="flex items-center min-h-screen p-6" style="background-image: url('https://picsum.photos/536/354'); background-repeat: no-repeat; background-size: cover;">
+  <div class="flex items-center min-h-screen p-6" 
+  style="background-image: url('https://t4.ftcdn.net/jpg/06/91/05/19/240_F_691051962_GFhQPOAXABmf7l706q89b2PFh6FnB1kI.jpg'); background-repeat: no-repeat; background-size: cover;">
     <div class="w-full max-w-md mx-auto">
       <h1 class="text-2xl text-orange-50 font-bold text-center mb-6">Sign Up</h1>
       <form @submit.prevent="handleSubmit">
@@ -51,7 +52,7 @@ export default {
   },
   methods: {
     async handleSubmit() {
-      this.errors = []; // Clear previous errors
+      this.errors = []; 
 
       if (this.password !== this.confirmPassword) {
         this.errors.push('Passwords do not match');

@@ -4,7 +4,8 @@
     bg-cover bg-center" style="background-image: url('https://th.bing.com/th/id/OIP.PnSZs4XgeXCCuIokWHEdNAHaAb')">
 
       <span class="text-white font-bold font-mono text-2xl absolute inset-x-0 text-center">Heltz Shopping Company</span>
-       
+        <i class="fas fa-user ml-auto mr-15 h-8 w-8 text-2xl text-white font-black"></i>
+        <p class="mr-15">SignIn</p>
       </div>
       <div class="bg-white h-50 flex justify-center items-center">
   <img src="../assets/logo.jpg" alt="Company Logo" class="ml-4 h-20 sm:h-10 md:h-18 lg:h-20 xl:h-22" />
@@ -23,11 +24,14 @@
       Search Items
   </button>
   </form>
-  <i class="fas fa-shopping-cart text-orange-500 mr-8 h-8 w-8 ml-10"></i> 
-
-  <span class="cart-count bg-green-500 text-black px-2 h-7 w-10 py-1 rounded-full ">{{ cartItemCount }}</span>
-  
-    
+   
+  <div>
+    <router-link to="/checkout">
+      <i class="fas fa-shopping-cart text-lime-900 relative ml-40" style="font-size: 35px;">
+        <span class="cart-count absolute ml-1 top-0 right-0 text-right text-xs font-black  text-yellow-300 px-1 py-1 h-5 w-5 rounded-full">{{ cartItemCount }}</span>
+      </i>
+    </router-link>
+  </div>
 </div>
 <DropdownMenu />
      

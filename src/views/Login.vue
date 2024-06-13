@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import axios from 'axios'; // Import Axios
+import axios from 'axios'; 
 
 export default {
   data() {
@@ -37,12 +37,12 @@ export default {
           password: this.password,
         });
 
-        // Handle the response (e.g., store tokens, redirect, etc.)
+       
         console.log('Login successful:', response.data);
         // Redirect to dashboard or handle errors
       } catch (error) {
         console.error('Login failed:', error);
-        // Handle login error (e.g., show error message)
+  
       }
     },
   },
@@ -51,13 +51,13 @@ export default {
 
 <style>
   .login-container {
-    /* Set the background image URL */
+  
     background-image: url('https://shopzetu.com/cdn/shop/files/Party_Fits_Website_Banner_d12861bf-134d-4236-954c-7fed0778537e.jpg?v=1716370022&width=1920');
-    /* Adjust background properties as needed */
+    
     background-size: cover;
     background-position: center;
     /* Add other styles for the container */
-    min-height: 100vh;
+    min-height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;

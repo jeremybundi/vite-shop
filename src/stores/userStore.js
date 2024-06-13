@@ -1,26 +1,21 @@
 import { defineStore } from 'pinia';
 
-export const useUserStore = defineStore('user', {
-    state: () => ({
-        user: null,
-        userRole: null,
-        userName: null,
-    }),
-    actions: {
-        setUserWithRolesAndName(userData) {
-            this.user = userData;
-            this.userRole = userData.role || null;
-            this.userName = userData.name || null;
-        },
-        resetUser() {
-            this.user = null;
-            this.userRole = null;
-            this.userName = null;
-        },
+export const useUserStore = defineStore('userStore', () => ({
+  role: null,
+  username: null,
+}), {
+  actions: {
+    updateUserInfo(role) {
+      this.role = role;
+      this.fetchUsername(role); 
     },
-    getters: {
-      
-        isLoggedIn: state => state.user !== null,
-        hasRole: state => role => state.userRole === role,
+  },
+  getters: {
+    getRole() {
+      return this.role;
     },
+    getUsername() {
+      return this.username;
+    },
+  },
 });

@@ -2,37 +2,47 @@
   <div class="bodyContainer mt-5">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 ml-4 ">
       <!-- Left column: Display items -->
-      <div v-if="addedItems.length" class="space-y-1 mt-5 w-500">
-        <div v-for="(item, index) in addedItems" :key="item.id" class="bg-white p-4 rounded-lg shadow-md">
-          <div class="flex items-center space-x-4">
-            <img :src="item.item_url" alt="Item Image" class="w-16 h-16 rounded-full" />
-            <div>
+      <div v-if="addedItems.length" class="space-y-1 mt-5">
+        <template v-for="(item, index) in addedItems" :key="item.id">
+          <div class="bg-white p-4 rounded-lg shadow-md flex flex-wrap">
+            <div class="flex flex-col items-center w-full md:w-1/3">
+              <img :src="item.item_url" alt="Item Image" class="w-16 h-16 mb-2" />
+              <button
+                class="delete-button bg-violet-800 rounded full text-xs text-red-500 hover:text-red-700"
+                @click="removeItem(item.id)"
+              >
+                <font-awesome-icon icon="fa-solid fa-trash" /> Remove from cart
+              </button>
+            </div>
+            <div class="w-full text-center md:w-1/3">
               <h3 class="text-lg font-semibold">{{ item.item_name }}</h3>
-              <p class="text-gray-500">{{ item.details }}</p>
+              <p class="text-gray-500 mb-4">{{ item.details }}</p>
+            </div>
+            <div class="text-center w-full md:w-1/3">
+              <span class="text-blue-500 font-semibold ">Price Ksh. {{ item.price }}</span>
+              <div class="flex space-x-2 ml-16">
+                <button @click="decrementItemQuantity(item.id)" class="text-red-500">
+                  <i class="fa fa-minus-square" aria-hidden="true"></i>
+                </button>
+                <span class="text-blue-500 ml-4">{{ item.quantity }}</span>
+                <button @click="incrementItemQuantity(item.id)" class="text-green-500">
+                  <i class="fa fa-plus-square" aria-hidden="true"></i>
+                </button>
+              </div>
             </div>
           </div>
-          <div class="flex items-center justify-between mt-4">
-            <span class="text-blue-500 font-semibold">Ksh. {{ item.price }}</span>
-            <div class="flex space-x-2">
-              <button @click="decrementItemQuantity(item.id)" class="text-red-500">
-                <i class="fas fa-minus"></i>
-              </button>
-              <span class="text-blue-500">{{ item.quantity }}</span>
-              <button @click="incrementItemQuantity(item.id)" class="text-green-500">
-                <i class="fas fa-plus"></i>
-              </button>
-            </div>
-          </div>
-        </div>
+        </template>
       </div>
 
-          
-      <div class="bg-green-50 h-1/2 w-50 mt-5 mr-5 p-4 rounded-lg shadow-md flex flex-col">
-        <h3>Cart Summary</h3>
-        <div class="text-blue-500 font-semibold">Total Price: Ksh. {{ totalPrice }}</div>
+                
+      <div class="bg-green-50 w-50 mt-5 mr-5 p-4 rounded-lg shadow-md flex flex-col">
+        <h3 class="text-2xl text-center text-red-700 font-bold font-serif">Cart Summary</h3>
+        <img src="../assets/logo.jpg" alt="Image description" class="w-20 h-20">
+
+        <div class="text-green-700 font-semibold text-center font-serif">Total Price:   Ksh. {{ totalPrice }}</div>
         <form @submit.prevent="placeOrder" class="space-y-4">
-          <div class="flex">
-            <label for="customerName" class="text-gray-600 w-1/4">Customer Name</label>
+          <div class="flex justify-center">
+            <label for="customerName" class="text-violet-600 w-1/4">Customer Name</label>
             <input
               type="text"
               id="customerName"
@@ -42,8 +52,8 @@
               required
             />
           </div>
-          <div class="flex">
-            <label for="phoneNumber" class="text-gray-600 w-1/4">Phone Number</label>
+          <div class="flex justify-center">
+            <label for="phoneNumber" class="text-violet-600 w-1/4">Phone Number</label>
             <input
               type="tel"
               id="phoneNumber"
@@ -54,8 +64,8 @@
               required
             />
           </div>
-          <div class="flex">
-            <label for="deliveryAddress" class="text-gray-600 w-1/4">Delivery Address</label>
+          <div class="flex justify-center">
+            <label for="deliveryAddress" class="text-violet-600 w-1/4">Delivery Address</label>
             <select
               id="deliveryAddress"
               v-model="deliveryAddress"
@@ -68,8 +78,8 @@
               <option value="emirates_complex">Emirates Complex</option>
             </select>
           </div>
-          <div class="flex">
-            <label for="paymentMethod" class="text-gray-600 w-1/4">Payment Method</label>
+          <div class="flex justify-center">
+            <label for="paymentMethod" class="text-violet-600 w-1/4">Payment Method</label>
             <select
               id="paymentMethod"
               v-model="paymentMethod"
@@ -82,11 +92,13 @@
               <option value="debit_card">Debit Card</option>
             </select>
           </div>
-          <button type="submit" class="bg-blue-500 text-white rounded-md py-2 px-4">
+          
+          <button type="submit" class=" ml-20 text-white rounded-md py-2 px-4 bg-green-600">
             Place Order
           </button>
+      
         </form>
-        <a href="/items" class="text-blue-500 mt-4 block">Continue shopping >></a>
+        <a href="/items" class="ml-auto text-blue-500 mt-4 block">Continue shopping >></a>
       </div>
 
     </div>

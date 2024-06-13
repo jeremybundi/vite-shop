@@ -13,13 +13,18 @@
         <img :src="items[id].item_url" alt="Item Image" class="w-22 h-18 mx-auto">  
         <div>
           <p class="text-gray-600 text-xs mt-3 mr-2">{{ items[id].details }}</p>
-          <p class="text-green-600 text-sm mt-4">Price: Ksh. {{ items[id].price }}</p>
-          <button
-            @click.prevent="addToCart(items[id])"
-            class="mt-0 bg-green-700 text-white py-2 px-4 rounded-md shadow-md hover:bg-blue-700 self-center"
-          >
-            Add to Cart
-          </button>
+          <p class="text-rose-600 text-sm mt-2">Price: Ksh. {{ items[id].price }}</p>
+      
+     <div class="flex justify-content-end items-center">
+      <i class="fas fa-shopping-cart text-red-400 relative" style="font-size: 20px;"></i>
+      <button
+        @click.prevent="addToCart(items[id])"
+        class="mt-0 bg-green-700 text-white py-1 px-2 ml-2 rounded-md shadow-md hover:bg-blue-700 self-center"
+      >
+    Add to Cart
+  </button>
+</div>
+        
         </div>
       </div>
     </div>

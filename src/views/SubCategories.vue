@@ -8,13 +8,16 @@
               <h2 class="text-lg font-semibold">{{ item.item_name }}</h2>
               <p class="text-gray-600 text-sm mt-3">{{ item.details }}</p>
               <p class="text-green-600 text-sm mt-4">Price: Ksh. {{ item.price }}</p>
-  
+
+              <div class="flex justify-content-end items-center">
+              <i class="fas fa-shopping-cart text-pink-700 relative" style="font-size: 20px;"></i>
               <button
                 @click.prevent="addToCart(item)"
-                class="mt-0 bg-blue-500 text-white py-2 px-4 rounded-md shadow-md hover:bg-blue-700"
-              >
-                Add to Cart
-              </button>
+                class="mt-0 bg-green-700 text-white py-1 px-2 ml-2 rounded-md shadow-md hover:bg-blue-700 self-center"
+                    >
+                  Add to Cart
+                </button>
+              </div>
             </div>
           </div>
         </div>

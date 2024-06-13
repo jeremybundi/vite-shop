@@ -3,17 +3,25 @@ import App from './App.vue';
 import './style.css';
 import router from './router'; 
 import { createPinia } from 'pinia'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
-library.add(faShoppingCart);
+import { library } from '@fortawesome/fontawesome-svg-core'
+
+import { FontAwesomeIcon, FontAwesomeLayers, FontAwesomeLayersText } from '@fortawesome/vue-fontawesome'
+
+
+import { fas } from '@fortawesome/free-solid-svg-icons';
+
+library.add(fas); 
 
 const pinia = createPinia()
 const app = createApp(App);
 
 app.use(pinia)
 app.use(router);
-app.component('font-awesome-icon', FontAwesomeIcon); // Register the component globally
+
+
+app.component('font-awesome-icon', FontAwesomeIcon)
+app.component('font-awesome-layers', FontAwesomeLayers)
+app.component('font-awesome-layer-text', FontAwesomeLayersText) 
 
 app.mount('#app');
