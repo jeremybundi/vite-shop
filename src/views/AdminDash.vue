@@ -1,11 +1,12 @@
 <template>
     <div class="bg-cover bg-center h-screen relative overflow-hidden">
-      <div class="absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 space-x-14">
+      <div class="flex flex-col items-center justify-center h-full space-y-4 sm:absolute sm:top-1/4 sm:left-1/2 sm:transform sm:-translate-x-1/2 sm:-translate-y-1/2 sm:flex-row sm:space-y-0 sm:space-x-14">
         <button @click="addItem" class="bg-green-500 text-white font-bold py-2 px-4 rounded">Add Items</button>
         <button @click="viewOrder" class="bg-green-500 text-white font-bold py-2 px-4 rounded">View Orders</button>
       </div>
     </div>
   </template>
+  
   
   <script>
   export default {
