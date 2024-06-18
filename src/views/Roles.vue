@@ -27,7 +27,7 @@
                     <option value="1">1</option>
                     <option value="2">2</option>
                   </select>
-                  <button @click="saveRole(user)" class="ml-2 p-2 bg-blue-500 text-white rounded">Save</button>
+                  <button @click="saveRole(user)" class="ml-2 p-2 bg-rose-400 text-white rounded">Save</button>
                 </div>
                 <div v-else>
                   {{ user.role_id }}
