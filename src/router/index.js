@@ -13,6 +13,7 @@ import OrderedItems from '../views/OrderedItems.vue';
 import SubCategories from '../views/SubCategories.vue';
 import TopCategories from '../views/TopCategories.vue';
 import AdminDash from '../views/AdminDash.vue';
+import Roles from '../views/Roles.vue';
 
 
 const routes = [
@@ -63,6 +64,13 @@ const routes = [
     name: 'OrderedItems',
     component: OrderedItems,
     meta: { requiresAuth: true, role: 1 },
+    
+  },
+  {
+    path: '/roles',
+    name: 'Roles',
+    component: Roles,
+   // meta: { requiresAuth: true, role: 1 },
     
   },
   {
