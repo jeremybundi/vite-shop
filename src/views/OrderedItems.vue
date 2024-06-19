@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white p-4">
+  <div class="bg-white text-sm p-4">
     <div class="flex flex-col md:flex-row items-center justify-between mb-4">
       <div class="mb-2 md:mb-0">
         <label for="order-number-input" class="text-gray-600 font-semibold">Order Number:</label>
@@ -9,6 +9,7 @@
           placeholder="Enter order number"
           type="text"
           class="border rounded-md px-2 py-1 w-full md:w-48"
+          pattern="\d*"
         />
       </div>
 
@@ -27,9 +28,8 @@
       </button>
     </div>
 
-    <!-- Order Display -->
     <div v-for="(order) in orders" :key="order.id" class="mb-6">
-      <!-- Left Column -->
+   
       <div class="md:flex md:items-start md:space-x-4">
         <div class="md:w-1/3">
           <h2 class="text-lg font-semibold">{{ order.customerName }}</h2>
@@ -37,7 +37,6 @@
           <p class="text-gray-600">{{ order.deliveryAddress }}</p>
         </div>
 
-        <!-- Middle Column -->
         <div class="md:w-1/2">
           <ul>
             <li v-for="item in order.items" :key="item.id" class="mb-4">
