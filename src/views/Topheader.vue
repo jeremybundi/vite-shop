@@ -1,23 +1,30 @@
 <template>
     <div>
-    <div class="relative h-16  flex items-center
+    <div class="relative h-16  
     bg-cover bg-center" style="background-image: url('https://th.bing.com/th/id/OIP.PnSZs4XgeXCCuIokWHEdNAHaAb')">
-
-    <span class="text-white font-bold font-mono text-lg sm:text-xl  inset-x-0 text-center">Heltz Online</span>
-    
-    <i class="fas fa-user  mr-2 sm:mr-2 h-6 w-6 text-xl text-white font-black"></i>
-      <div class="flex flex-col items-center mr-2 sm:mr-2">
-    <span v-if="userStore.username" class="text-sm font-medium text-gray-800">Hi, {{ userStore.username }}</span>
+    <div class="flex justify-between ">
+    <div class="underline text-white font-bold mt-3"> Shop with us!!</div>
+     <div>
+    <span class="text-white font-bold font-serif  text-2xl  inset-x-0">Heltz Online Shopping</span>
+  </div>
+    <div class="flex justify-center">
+    <i class="fas fa-user mr-0 h-6 w-6 text-xl text-white font-black"></i>
+      <div class="flex flex-col">
+    <span v-if="userStore.username" class="text-sm font-medium text-white font bold">Hi, {{ userStore.username }}</span>
     <RouterLink :to="{ name:'Login'}" v-if="!userStore.username" 
-     class="mt-2 cursor-pointer  text-white py-2 px-4 rounded hover:bg-blue-700">Sign In</RouterLink>
+     class="mt-0cursor-pointer  text-white py-2 px-4 rounded font-bold">Sign In</RouterLink>
     <button v-if="userStore.username" @click="signOut" 
-    class="mt-2  text-red py-2 px-4 rounded hover:bg-red-700">Sign Out</button>
-
+    class="mt-0  text-red py-2 px-4 rounded font-bold">Sign Out</button>
+  </div>
 </div>
 </div>
-      <div class="bg-white h-50 flex justify-center items-center">
+</div>
+      <div class="bg-white h-50 flex justify-evenly">
+        <div>
   <img src="../assets/logo.jpg" alt="Company Logo" class="ml-4 h-20 sm:h-10 md:h-18 lg:h-20 xl:h-22" />
-  <form @submit.prevent="searchItems" class="search-form flex items-center ml-4">
+</div>
+<div>
+  <form @submit.prevent="searchItems" class="search-form flex mt-6">
   <input
     v-model="searchQuery"
     placeholder="Enter Item Name"
@@ -35,17 +42,22 @@
     Search Items
   </button>
 </form>
-
-   
+</div>
   <div>
     <router-link to="/checkout">
-      <i class="fas fa-shopping-cart text-lime-900 relative ml-20 sm:ml-5" style="font-size: 35px;">
-        <span class="cart-count absolute ml-1 top-0 right-0 text-right text-xs font-black  text-yellow-300 px-1 py-1 h-5 w-5 rounded-full">{{ cartItemCount }}</span>
+      <i class="fas fa-shopping-cart text-lime-900 relative mt-6" style="font-size: 35px;">
+        <span class="cart-count absolute ml-1 top-0 right-0 text-right text-xs font-black  text-yellow-200 px-1 py-1 h-5 w-5 rounded-full">{{ cartItemCount }}</span>
       </i>
     </router-link>
   </div>
 </div>
+<div class="flex justify-between">
+<router-link :to="{path: '/'}" class="underline ml-10 text-sm font-bold hover:text-pink-500">Home</router-link>
+<div  class="mb-2">
 <DropdownMenu />
+</div>
+<router-link :to="{path: '/items'}" class="underline mr-10 text-sm font-bold hover:text-pink-500">All items</router-link>
+</div>
      
 </div>
   </template>

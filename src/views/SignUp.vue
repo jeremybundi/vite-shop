@@ -1,47 +1,58 @@
 <template>
-  <div class="flex items-center min-h-screen p-6" 
-  style="background-image: url('https://t4.ftcdn.net/jpg/06/91/05/19/240_F_691051962_GFhQPOAXABmf7l706q89b2PFh6FnB1kI.jpg'); background-repeat: no-repeat; background-size: cover;">
-    <div class="w-full max-w-md mx-auto">
-      <h1 class="text-2xl text-orange-50 font-bold text-center mb-6">Sign Up</h1>
+    <div class="login-container"
+     style="background-image: url('https://i.pinimg.com/474x/ab/51/15/ab51159db0e51cdc23b82af1452a994e.jpg'); background-size: cover; background-repeat: no-repeat;">
+    <div class="flex  min-h-screen p-6">
+    <div class="w-full max-w-md mx-auto mt-2 bg-white rounded-md border mb-2" >
+      <h1 class="text-2xl text-black font-bold text-center mb-6">Sign Up</h1>
       <form @submit.prevent="handleSubmit">
-        <div class="mb-4 flex items-center">
-          <label for="name" class="block text-amber-50 font-bold mr-auto">Name</label>
-          <input type="text" id="name" v-model="name" class="w-170 px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500">
+        <div  class="grid grid-cols-2 gap-4 mb-4">
+        <div>
+          <label for="name" class="text-center block text-black font-bold">Name</label>
+          <input type="text" id="name" v-model="name" class="w-25 mx-1 px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500">
           <span class="text-red-500 text-xs">{{ errors.name }}</span>
         </div>
-        <div class="mb-4 flex items-center">
-          <label for="phone" class="block text-amber-50 font-bold mr-auto">Phone Number</label>
-          <input type="tel" id="phone" v-model="phone" class="w-170 px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500">
+        <div>
+          <label for="phone" class="text-center block text-black font-bold">Phone Number</label>
+          <input type="tel" id="phone" v-model="phone" class="w-25 mx-1 px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500">
           <span class="text-red-500 text-xs">{{ errors.phone }}</span>
         </div>
-        <div class="mb-4 flex items-center">
-          <label for="email" class="block text-amber-50 font-bold mr-auto">Email</label>
-          <input type="email" id="email" v-model="email" class="w-170 px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500">
+        <div>
+          <label for="email" class=" text-center block text-black font-bold">Email</label>
+          <input type="email" id="email" v-model="email" class="w-25 mx-1 px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500">
           <span class="text-red-500 text-xs">{{ errors.email }}</span>
         </div>
-        <div class="mb-4 flex items-center">
-          <label for="username" class="block text-amber-50 font-bold mr-auto">Username</label>
-          <input type="username" id="username" v-model="username" class="w-120 px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500">
+        <div>
+          <label for="username" class="text-center block text-black font-bold">Username</label>
+          <input type="username" id="username" v-model="username" class="w-25 mx-1 px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500">
           <span class="text-red-500 text-xs">{{ errors.username }}</span>
         </div>
-        <div class="mb-4 flex items-center">
-          <label for="password" class="block text-amber-50 font-bold mr-auto">Password</label>
-          <input type="password" id="password" v-model="password" class="w-120 px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500">
+        <div>
+          <label for="password" class="text-center block text-black font-bold">Password</label>
+          <input type="password" id="password" v-model="password" class="w-25 mx-1 px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500">
           <span class="text-red-500 text-xs">{{ errors.password }}</span>
         </div>
-        <div class="mb-6 flex items-center">
-          <label for="confirmPassword" class="block text-amber-50 font-bold mr-auto">Confirm Pswd</label>
-          <input type="password" id="confirmPassword" v-model="confirmPassword" class="w-120 px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500">
-        
+        <div>
+          <label for="confirmPassword" class="text-center block text-black font-bold">Confirm Password</label>
+          <input type="password" id="confirmPassword" v-model="confirmPassword" class="w-25 mx-1 px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500">
         </div>
-        <div class="flex justify-center">  <button type="submit" class="w-1/3 py-2 bg-lime-500 hover:bg-lime-700 text-white font-bold rounded-md">Sign Up</button>
+      </div>
+        <div class=" text-center bt-3">
+        <button type="submit" class=" w-1/2 py-2 bg-lime-500 hover:bg-lime-700 
+        text-white font-bold rounded-md ">Sign Up</button>
+      </div>
+        <div v-if="signupSuccess" class="text-center text-yellow-200 col-span-2">
+          Signup successful! Please log in to continue. <a href="/login" class="text-red-500">Login</a>
         </div>
       </form>
     </div>
   </div>
+</div>
 </template>
+
+
 <script>
 import axios from 'axios';
+
 
 export default {
   data() {
@@ -52,7 +63,8 @@ export default {
       username: '',
       password: '',
       confirmPassword: '',
-      errors: {}
+      errors: {},
+      signupSuccess: false,
     };
   },
   methods: {
@@ -77,9 +89,11 @@ export default {
           password: this.password
         })
         .then(response => {
-          
+
+        
           console.log('Signup successful!');
           this.clearForm();
+          this.signupSuccess = true;
         })
         .catch(error => {
          

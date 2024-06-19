@@ -5,15 +5,20 @@
       :key="category.id"
       @mouseover="showDropdown(category.id)"
       @mouseleave="showDropdown(null)"
-      class="px-4 py-2 rounded-md text-sm font-medium text-gray-700 underline hover:text-blue-500 hover:underline-offset-8 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+      class="px-4 py-2 rounded-md text-sm font-medium text-gray-700 underline 
+      hover:text-yellow-600 hover:underline-offset-8 focus:outline-none
+      focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
     >
       {{ category.name }}
-      <ul v-show="currentDropdownId === category.id" class="absolute z-50 mt-2 rounded-md shadow-sm border border-gray-200 bg-white overflow-hidden">
+      <ul v-show="currentDropdownId === category.id" 
+      class="absolute z-50 mt-2 rounded-md shadow-sm border border-gray-200 bg-white overflow-hidden">
         <li
           v-for="subcategory in category.subcategories"
           :key="subcategory.id"
           class="block px-4 py-2 hover:bg-gray-100 border-b border-gray-200"
-        >
+        > 
+        
+
           <router-link :to="{ name: 'subcategories', params: { subcategoryId: subcategory.id } }">{{ subcategory.name }}</router-link>
         </li>
       </ul>
@@ -75,5 +80,4 @@ export default {
 </script>
 
 <style scoped>
-/* Add your custom styles here (optional) */
 </style>

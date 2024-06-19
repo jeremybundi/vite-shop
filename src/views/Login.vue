@@ -18,10 +18,11 @@
             id="password" class="mt-1 p-2 border rounded-md w-full" required>
          
           </div>
+          <div class="flex justify-center">
           <button type="submit" class="bg-green-700 text-white font-bold px-4 py-2 rounded-md w-1/3"
            :disabled="isLoading || !isUsernameValid">Log In</button>
           <div v-if="isLoading" class="text-center mt-2">
-   
+          </div>
           </div>
           <div v-if="error" class="text-red-500 text-sm mt-2">{{ error }}</div>
         </form>

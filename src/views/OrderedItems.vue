@@ -52,7 +52,6 @@
           </ul>
         </div>
 
-        <!-- Right Column -->
         <div class="md:w-1/3">
           <p class="text-red-500 font-semibold">Total Price Ksh. {{ order.totalPrice }}</p>
           <p class="text-gray-600">{{ order.paymentMethod }}</p>
@@ -100,5 +99,5 @@ export default {
 </script>
 
 <style scoped>
-/* Your existing styles can remain unchanged */
+
 </style>
