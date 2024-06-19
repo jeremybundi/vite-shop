@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import { useUserStore } from '../stores/userStore'; // Adjust path as needed
+import { useUserStore } from '../stores/userStore'; 
 
 import Home from '../views/Home.vue';
 import Login from '../views/Login.vue';
@@ -41,7 +41,7 @@ const routes = [
     path: '/add',
     name: 'Add',
     component: Add,
-   // meta: { requiresAuth: true, role: 1 },
+   meta: { requiresAuth: true, role: 1 },
    
   },
   {
@@ -63,14 +63,14 @@ const routes = [
     path: '/ordered',
     name: 'OrderedItems',
     component: OrderedItems,
-    meta: { requiresAuth: true, role: 1 },
+   // meta: { requiresAuth: true, role: 1 },
     
   },
   {
     path: '/roles',
     name: 'Roles',
     component: Roles,
-   // meta: { requiresAuth: true, role: 1 },
+    meta: { requiresAuth: true, role: 1 },
     
   },
   {
