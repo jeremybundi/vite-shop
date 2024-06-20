@@ -11,9 +11,14 @@ import { FontAwesomeIcon, FontAwesomeLayers, FontAwesomeLayersText } from '@fort
 
 import { fas } from '@fortawesome/free-solid-svg-icons';
 
+import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
+
+
 library.add(fas); 
 
 const pinia = createPinia()
+pinia.use(piniaPluginPersistedstate)
+
 const app = createApp(App);
 
 app.use(pinia)

@@ -1,9 +1,9 @@
 <template>
     <div class="flex flex-col p-4">
-      <div class="flex ml-auto">
-        <input v-model="name" type="text" placeholder="Search by name" 
-        class="p-2 border rounded w-50"> 
-        <button @click="searchUsers" class="ml-2 p-2 bg-green-900 text-white rounded">Search</button>
+      <div class="flex ml-auto mb-2">
+        <input v-model="name" type="text" placeholder="Enter Name" 
+        class="p-2 border bg-yellow-50 rounded w-30"> 
+        <button @click="searchUsers" class="ml-2 p-2 bg-green-900 text-center text-white rounded">Search</button>
       </div>
       <table class="min-w-full w-3/4 table-fixed">
         <thead>
@@ -21,17 +21,20 @@
               <td class="p-2">{{ user.name }}</td>
               <td class="p-2">{{ user.username }}</td>
               <td class="p-2">{{ user.email }}</td>
-              <td class="p-2">
+              <td class="p-2 flex">
                 <div v-if="editingUserId === user.id">
                   <select v-model="user.role_id" class="p-2 border rounded w-15">
                     <option value="1">1</option>
                     <option value="2">2</option>
                   </select>
-                  <button @click="saveRole(user)" class="ml-2 p-2 bg-rose-400 text-white rounded">Save</button>
+                  <button @click="saveRole(user)" class="ml-2 p-2 bg-green-600 text-white font-semibold rounded">Save</button>
                 </div>
                 <div v-else>
                   {{ user.role_id }}
-                  <button @click="editRole(user.id)" class="ml-2 p-2 bg-yellow-500 text-white rounded">Edit</button>
+                  <button @click="editRole(user.id)" class="ml-2 p-2 bg-yellow-500 text-white font-semibold rounded">Edit</button>
+                </div>
+                <div>
+                  <button @click="deleteUser(user.id)" class="ml-2 p-2 bg-red-500 text-white font-semibold rounded">Delete</button>
                 </div>
               </td>
             </tr>
@@ -88,7 +91,16 @@
         } catch (error) {
           console.error(error);
         }
-      }
+      },
+      async deleteUser(userId) {
+        try {
+          const url = `/api/users/delete/${userId}`;
+          await axios.delete(url);
+          this.fetchUsers();
+        } catch (error) {
+          console.error(error);
+        }
+      },
     }
   };
   </script>

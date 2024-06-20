@@ -53,6 +53,8 @@ const routes = [
     path: '/checkout',
     name: 'Checkout',
     component: Checkout,
+    meta: { requiresAuth: true, role: 2 }, 
+
   },
   {
     path: '/search',
@@ -63,14 +65,14 @@ const routes = [
     path: '/ordered',
     name: 'OrderedItems',
     component: OrderedItems,
-   // meta: { requiresAuth: true, role: 1 },
+    meta: { requiresAuth: true, role: 1 },
     
   },
   {
     path: '/roles',
     name: 'Roles',
     component: Roles,
-    meta: { requiresAuth: true, role: 1 },
+   // meta: { requiresAuth: true, role: 1 },
     
   },
   {

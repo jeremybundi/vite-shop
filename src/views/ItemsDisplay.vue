@@ -34,7 +34,7 @@ import { useAddedItemStore } from '../stores/addedItemsStore';
 export default {
   data() {
     return {
-      items: [], // Initialize as an empty array
+      items: [], 
     };
   },
 

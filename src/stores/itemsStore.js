@@ -8,6 +8,10 @@ export const useItemsStore = defineStore('items', {
   actions: {
     setItems(items) {
       this.items = items;
+      console.log(this.items);
     },
   },
+
+  persist: true
+ 
 });

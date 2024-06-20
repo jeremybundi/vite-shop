@@ -37,8 +37,9 @@
                 
       <div class="bg-green-50 w-50 mt-5 mr-5 p-4 rounded-lg shadow-md flex flex-col">
         <h3 class="text-2xl text-center text-red-700 font-bold font-serif">Cart Summary</h3>
+        <div class="flex justify-center">
         <img src="../assets/logo.jpg" alt="Image description" class="w-20 h-20">
-
+      </div>
         <div class="text-green-700 font-semibold text-center font-serif">Total Price:   Ksh. {{ totalPrice }}</div>
         <form @submit.prevent="placeOrder" class="space-y-4">
           <div class="flex justify-center">
@@ -92,11 +93,11 @@
               <option value="debit_card">Debit Card</option>
             </select>
           </div>
-          
+          <div class="flex justify-center">
           <button type="submit" class=" ml-20 text-white rounded-md py-2 px-4 bg-green-600">
             Place Order
           </button>
-      
+        </div>
         </form>
         <a href="/items" class="ml-auto text-blue-500 mt-4 block">Continue shopping >></a>
       </div>
@@ -177,7 +178,7 @@ export default {
       try {
         const response = await axios.post('/api/orders', orderData);
         console.log('Order placed successfully:', response.data);
-            // Clear cart
+         
           const store = useAddedItemStore();
           store.clearCart();
     

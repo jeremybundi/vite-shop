@@ -19,7 +19,7 @@
 </div>
 </div>
 </div>
-      <div class="bg-white h-50 flex justify-evenly">
+      <div class="bg-green-50 h-50 flex justify-evenly">
         <div>
   <img src="../assets/logo.jpg" alt="Company Logo" class="ml-4 h-20 sm:h-10 md:h-18 lg:h-20 xl:h-22" />
 </div>
@@ -29,7 +29,7 @@
     v-model="searchQuery"
     placeholder="Enter Item Name"
     class="search-input focus:outline-none focus:ring-2 focus:ring-neutral-700 
-    focus:ring-opacity-50 rounded-md bg-green-50 px-1 py-1 w-110 ml-70 border border-gray-300 " 
+    focus:ring-opacity-50 rounded-md bg-yellow-50 px-1 py-1 w-110 ml-70 border border-gray-300 " 
   />
   <div v-if="errorMessage" class="text-red-500 text-sm mt-2">
     {{ errorMessage }}
@@ -37,7 +37,8 @@
   <button
     type="submit"
     variant="primary"
-    class="search-button bg-green-800 text-white hover:bg-blue-700 py-2 px-4 rounded-md ml-5 mr-50 sm:py-1 sm:px-2 sm:text-sm sm:mr-0"
+    class="search-button bg-green-800 text-white hover:bg-blue-700 py-2 px-4
+     rounded-md ml-5 mr-50 sm:py-1 sm:px-2 sm:text-sm sm:mr-0"
     >
     Search Items
   </button>
@@ -51,12 +52,14 @@
     </router-link>
   </div>
 </div>
-<div class="flex justify-between">
+<div class="bg-green-50 flex justify-between">
 <router-link :to="{path: '/'}" class="underline ml-10 text-sm font-bold hover:text-pink-500">Home</router-link>
 <div  class="mb-2">
 <DropdownMenu />
 </div>
 <router-link :to="{path: '/items'}" class="underline mr-10 text-sm font-bold hover:text-pink-500">All items</router-link>
+<router-link v-if="userStore.role == 1"  :to="{path: '/admin'}" class="underline mr-10 text-sm font-bold hover:text-pink-500">Admin Dashboard</router-link>
+
 </div>
      
 </div>
@@ -70,6 +73,7 @@ import { useAddedItemStore } from '../stores/addedItemsStore';
 import { useItemsStore } from '../stores/itemsStore';
 import { useUserStore } from '../stores/userStore'; 
 import { RouterLink, useRouter } from 'vue-router';
+
 
 export default {
   components: {
