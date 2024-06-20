@@ -15,5 +15,5 @@ export const useUserStore = defineStore('user', {
       this.role = null
     }
   },
-  persist: true
+  persist: false
 })

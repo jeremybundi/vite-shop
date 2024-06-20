@@ -58,7 +58,8 @@
 <DropdownMenu />
 </div>
 <router-link :to="{path: '/items'}" class="underline mr-10 text-sm font-bold hover:text-pink-500">All items</router-link>
-<router-link v-if="userStore.role == 1"  :to="{path: '/admin'}" class="underline mr-10 text-sm font-bold hover:text-pink-500">Admin Dashboard</router-link>
+<router-link v-if="userStore.role == 1"  :to="{path: '/admin'}"
+ class="underline mr-10 text-sm font-bold hover:text-pink-500">Admin Dashboard</router-link>
 
 </div>
      
@@ -92,6 +93,7 @@ export default {
 
     function signOut() {
       userStore.username = null; 
+      userStore.role = null;
       router.push({ name: 'Home' }); 
     }
 

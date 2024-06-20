@@ -8,7 +8,7 @@
           v-model="searchOrderNumber"
           placeholder="Enter order number"
           type="text"
-          class="border rounded-md px-2 py-1 w-full md:w-48"
+          class="border bg-yellow-50 rounded-md px-2 py-1 w-full md:w-48"
           pattern="\d*"
         />
       </div>
@@ -23,7 +23,7 @@
         />
       </div>
 
-      <button @click="fetchOrders" class="bg-green-500 text-white px-4 py-2 rounded-md md:ml-4">
+      <button @click="fetchOrders" class="bg-green-800 text-white font-serif text-semibold px-4 py-2 rounded-md md:ml-4">
         Search Orders
       </button>
     </div>
@@ -32,9 +32,10 @@
    
       <div class="md:flex md:items-start md:space-x-4">
         <div class="md:w-1/3">
-          <h2 class="text-lg font-semibold">{{ order.customerName }}</h2>
-          <p class="text-gray-600">{{ order.phoneNumber }}</p>
-          <p class="text-gray-600">{{ order.deliveryAddress }}</p>
+          <h3 class="text-sm font-bold">Order No: {{ order.id }}</h3>
+          <h2 class="text-sm font-semibold">Name: {{ order.customerName }}</h2>
+          <p class="text-stone-950 text-xs font-serif">Phone: {{ order.phoneNumber }}</p>
+          <p class="text-stone-950 text-xs font-sans">Address: {{ order.deliveryAddress }}</p>
         </div>
 
         <div class="md:w-1/2">
@@ -44,8 +45,8 @@
                 <img :src="item.item_url" alt="Item image" class="w-16 h-16 object-cover mr-4" />
                 <div>
                   <h3 class="text-md font-semibold">{{ item.item_name }}</h3>
-                  <p class="text-gray-600">{{ item.details }}</p>
-                  <p class="text-gray-600">Quantity: {{ item.quantity }}</p>
+                  <p class="text-stone-950 text-xs font-mono">{{ item.details }}</p>
+                  <p class="text-violet-900 font-semibold text-xs">Quantity: {{ item.quantity }}</p>
                 </div>
               </div>
             </li>
@@ -53,9 +54,9 @@
         </div>
 
         <div class="md:w-1/3">
-          <p class="text-red-500 font-semibold">Total Price Ksh. {{ order.totalPrice }}</p>
-          <p class="text-gray-600">{{ order.paymentMethod }}</p>
-          <p class="text-gray-600">Order Date: {{ order.createdAt }}</p>
+          <p class="text-lime-800 font-semibold mb-2">Total Price:  Ksh {{ order.totalPrice }}</p>
+          <p class="text-gray-600 text-xs mb-2 font-serif">Payment mode: {{ order.paymentMethod }}</p>
+          <p class="text-gray-600 text-xs">Order Date: {{ order.createdAt }}</p>
         </div>
       </div>
       <hr class="my-4 border-t border-gray-300" />

@@ -5,7 +5,7 @@
       :key="category.id"
       @mouseover="showDropdown(category.id)"
       @mouseleave="showDropdown(null)"
-      class="px-4 py-2 rounded-md text-sm font-medium text-gray-700 underline 
+      class="px-4 py-2 rounded-md text-sm font_serif font-semibold text-gray-700 underline  
       hover:text-yellow-600 hover:underline-offset-8 focus:outline-none
       focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
     >
