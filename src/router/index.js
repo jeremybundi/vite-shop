@@ -41,7 +41,7 @@ const routes = [
     path: '/add',
     name: 'Add',
     component: Add,
-   meta: { requiresAuth: true, role: 1 },
+    //meta: { requiresAuth: true, role: 1 },
    
   },
   {

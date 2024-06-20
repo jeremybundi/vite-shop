@@ -82,14 +82,14 @@ export default {
   methods: {
     validateForm() {
       const errors = {};
-      if (!this.formData.item_name || !/^[a-zA-Z\s]+$/.test(this.formData.item_name)) {
-        errors.item_name = 'Item name must contain only letters.';
+      if (!this.formData.item_name || !/^[a-zA-Z\s'-.]+$/.test(this.formData.item_name)) {
+          errors.item_name = 'Item name must contain only letters, hyphens, or apostrophes.';
       }
       if (!this.formData.item_url || !/^(https?:\/\/[^\s$.?#].[^\s]*)$/i.test(this.formData.item_url)) {
         errors.item_url = 'Item URL must be a valid link.';
       }
-      if (!this.formData.details || !/^[a-zA-Z\s]+$/.test(this.formData.details)) {
-          errors.details = 'Description must contain only letters.';
+      if (!this.formData.details || !/^[a-zA-Z\s'-.]+$/.test(this.formData.details)) {
+          errors.details = 'Item name must contain only letters, hyphens, or apostrophes.';
         }
         if (!this.formData.price || !/^\d+$/.test(this.formData.price)) {
           errors.price = 'Price must be a number without decimals.';

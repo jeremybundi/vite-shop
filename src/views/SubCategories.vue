@@ -64,6 +64,7 @@
           const response = await fetch(`/api/items/search/${subcategoryId}`);
           const data = await response.json();
           this.items = data;
+          console.log(data);
           localStorage.setItem('subcategoryItems', JSON.stringify(this.items));
         } catch (error) {
           console.error('Error fetching subcategories:', error);
