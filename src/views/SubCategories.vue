@@ -26,7 +26,7 @@
   </template>
   
   <script>
-  import { useAddedItemStore } from '../stores/addedItemsStore'; // Import for cart functionality
+  import { useAddedItemStore } from '../stores/addedItemsStore'; 
   
   export default {
     name: 'SubCategories',

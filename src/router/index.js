@@ -72,7 +72,7 @@ const routes = [
     path: '/roles',
     name: 'Roles',
     component: Roles,
-    meta: { requiresAuth: true, role: 1 },
+    //meta: { requiresAuth: true, role: 1 },
     
   },
   {

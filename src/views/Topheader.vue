@@ -1,9 +1,10 @@
 <template>
     <div>
+    
     <div class="relative h-16  
     bg-cover bg-center" style="background-image: url('https://th.bing.com/th/id/OIP.PnSZs4XgeXCCuIokWHEdNAHaAb')">
     <div class="flex justify-between ">
-    <div class="underline text-white font-bold mt-3"> Shop with us!!</div>
+    <div class="underline text-white font-bold mt-3 ml-3"> Shop with us!!</div>
      <div class=" mt-3 ">
     <span class="text-white font-bold font-serif  text-3xl  inset-x-0">Heltz Online Shopping</span>
   </div>
@@ -14,7 +15,7 @@
     <RouterLink :to="{ name:'Login'}" v-if="!userStore.username" 
      class="mt-0 cursor-pointer  text-white py-2 px-4 rounded font-bold">Sign In</RouterLink>
     <button v-if="userStore.username" @click="signOut" 
-    class="mt-0 text-sm  text-red-600 font-bold py-2 px-4 rounded ">Sign out</button>
+    class="mt-0 text-sm mr-3 text-red-600 font-bold py-2 px-4 rounded ">Sign out</button>
   </div>
 </div>
 </div>
@@ -68,7 +69,7 @@
  class="underline mr-10 text-sm font-bold hover:text-pink-500">Admin Dashboard</router-link>
 
 </div>
-     
+  
 </div>
   </template>
   

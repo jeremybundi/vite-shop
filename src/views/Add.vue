@@ -1,7 +1,8 @@
 <template>
-  <div class="bg-gray-100 min-h-screen flex items-center justify-center" style="background-image: url(https://i.pinimg.com/564x/37/0b/a6/370ba6f1cf1463128776c48547da7ded.jpg);">
+  <div class="bg-gray-100 min-h-screen flex items-center justify-center
+" style="background-image: url(https://i.pinimg.com/564x/37/0b/a6/370ba6f1cf1463128776c48547da7ded.jpg);">
     <div class="max-w-md mx-auto bg-white p-8 rounded-lg shadow">
-      <div class="text-center mb-2 mt-0">
+      <div class="text-center mb-2 mt-4">
         <h2 class="text-xl font-semibold font-serif">Add Item</h2>
       </div>
       <div class="grid grid-cols-2 gap-4">

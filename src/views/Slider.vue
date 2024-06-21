@@ -30,7 +30,7 @@ let slideInterval;
 const startSlide = () => {
   slideInterval = setInterval(() => {
     currentSlide.value = (currentSlide.value + 1) % images.value.length;
-  }, 4000); // Adjust interval (in milliseconds) for slide speed
+  }, 4000); 
 };
 
 onMounted(startSlide);
