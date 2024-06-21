@@ -4,17 +4,17 @@
     bg-cover bg-center" style="background-image: url('https://th.bing.com/th/id/OIP.PnSZs4XgeXCCuIokWHEdNAHaAb')">
     <div class="flex justify-between ">
     <div class="underline text-white font-bold mt-3"> Shop with us!!</div>
-     <div>
-    <span class="text-white font-bold font-serif  text-2xl  inset-x-0">Heltz Online Shopping</span>
+     <div class=" mt-3 ">
+    <span class="text-white font-bold font-serif  text-3xl  inset-x-0">Heltz Online Shopping</span>
   </div>
     <div class="flex justify-center">
-    <i class="fas fa-user mr-0 h-6 w-6 text-xl text-white font-black"></i>
+    <i class="fas fa-user mt-3 mr-0 h-6 w-6 text-xl text-white font-black"></i>
       <div class="flex flex-col">
-    <span v-if="userStore.username" class="text-sm font-medium text-white font bold">Hi, {{ userStore.username }}</span>
+    <span v-if="userStore.username" class="text-sm mr-2 mt-3 font-medium text-white font bold">Hi, {{ userStore.username }}</span>
     <RouterLink :to="{ name:'Login'}" v-if="!userStore.username" 
-     class="mt-0cursor-pointer  text-white py-2 px-4 rounded font-bold">Sign In</RouterLink>
+     class="mt-0 cursor-pointer  text-white py-2 px-4 rounded font-bold">Sign In</RouterLink>
     <button v-if="userStore.username" @click="signOut" 
-    class="mt-0  text-red py-2 px-4 rounded font-bold">Sign Out</button>
+    class="mt-0 text-sm  text-red-600 font-bold py-2 px-4 rounded ">Sign out</button>
   </div>
 </div>
 </div>
@@ -31,26 +31,32 @@
     class="search-input focus:outline-none focus:ring-2 focus:ring-neutral-700 
     focus:ring-opacity-50 rounded-md bg-yellow-50 px-1 py-1 w-110 ml-70 border border-gray-300 " 
   />
-  <div v-if="errorMessage" class="text-red-500 text-sm mt-2">
+  <div v-if="errorMessage" class="text-red-600 font-semibold text-sm mt-2">
     {{ errorMessage }}
   </div>
   <button
     type="submit"
     variant="primary"
-    class="search-button bg-green-800 text-white hover:bg-blue-700 py-2 px-4
+    class="search-button bg-green-800 text-white hover:bg-green-500 font-serif font-semi-bold py-2 px-4
      rounded-md ml-5 mr-50 sm:py-1 sm:px-2 sm:text-sm sm:mr-0"
     >
     Search Items
   </button>
 </form>
 </div>
-  <div>
-    <router-link to="/checkout">
-      <i class="fas fa-shopping-cart text-lime-900 relative mt-6" style="font-size: 35px;">
-        <span class="cart-count absolute ml-1 top-0 right-0 text-right text-xs font-black  text-yellow-200 px-1 py-1 h-5 w-5 rounded-full">{{ cartItemCount }}</span>
-      </i>
-    </router-link>
-  </div>
+<div class="flex items-center">
+  <router-link to="/checkout" class="relative mt-3">
+    <span class="mr-2 font-semibold font-serif text-lg">View Cart</span>
+    <font-awesome-icon icon="shopping-cart" class="text-yellow-400 font-bold" style="font-size: 20px;" />
+    <span class="absolute top-[-11px] right-[-4px] text-red-700 font-bold text-sm rounded-full p-1
+     flex items-center">
+      {{ cartItemCount }}
+     
+    </span>
+  </router-link>
+</div>
+
+    
 </div>
 <div class="bg-green-50 flex justify-between">
 <router-link :to="{path: '/'}" class="underline ml-10 text-sm font-bold hover:text-pink-500">Home</router-link>
