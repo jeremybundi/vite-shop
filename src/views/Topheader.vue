@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="fixed top-0 left-0 right-0 z-50">
     
     <div class="relative h-16  
     bg-cover bg-center" style="background-image: url('https://th.bing.com/th/id/OIP.PnSZs4XgeXCCuIokWHEdNAHaAb')">

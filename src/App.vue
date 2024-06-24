@@ -4,10 +4,15 @@
 
   <div id="app">
 
+    
+ 
   <topheader></topheader>
 
+  <div class="top-48 relative"> 
+    <router-view></router-view>
+  </div>
 
-  <router-view></router-view>
+
 </div>
  
 </template>
